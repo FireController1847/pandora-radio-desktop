@@ -1,13 +1,6 @@
 const { app, BrowserWindow } = require('electron');
-const reload = require('electron-reload');
 const path = require('path');
 const url = require('url');
-
-// Reload
-reload(__dirname, {
-  electron: path.join(__dirname, '../node_modules', '.bin', 'electron.cmd'),
-  hardResetMethod: 'exit'
-});
 
 // Main
 let window;
@@ -30,4 +23,9 @@ app.on('ready', () => {
   window.once('ready-to-show', () => {
     window.show();
   });
+});
+app.on('window-all-closed', () => {
+  if (process.platform !== 'darwin') {
+    app.quit();
+  }
 });

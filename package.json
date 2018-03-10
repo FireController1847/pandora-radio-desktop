@@ -6,8 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "electron .",
-    "pack": "electron-builder --dir",
-    "dist": "electron-builder"
+    "build": "electron-builder"
   },
   "repository": {
     "type": "git",
@@ -29,13 +28,19 @@
   "devDependencies": {
     "electron": "^1.8.3",
     "electron-builder": "^20.4.1",
-    "electron-reload": "^1.2.2"
+    "electron-reload": "^1.2.2",
+    "electron-windows-installer": "^1.7.8",
+    "electron-winstaller": "^2.6.4"
   },
   "build": {
     "appId": "com.electron.vfd.pandoraradio",
-    "win": {
-      "target": "msi",
-      "icon": "src/assets/icons/pandora.ico"
+    "productName": "Pandora Radio Desktop",
+    "nsis": {
+      "oneClick": false,
+      "allowElevation": true,
+      "allowToChangeInstallationDirectory": true,
+      "artifactName": "${productName} Setup.${ext}",
+      "uninstallDisplayName": "${productName}"
     }
   }
 }
