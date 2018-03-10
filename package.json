@@ -1,0 +1,41 @@
+{
+  "name": "pandoraradiodesktop",
+  "version": "1.0.0",
+  "description": "A very simple desktop application for Pandora Radio.",
+  "main": "./src/main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FireController1847/pandora-radio-desktop.git"
+  },
+  "keywords": [
+    "music",
+    "music-player",
+    "pandora",
+    "pandora-api",
+    "pandora-radio"
+  ],
+  "author": "FireController1847",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/FireController1847/pandora-radio-desktop/issues"
+  },
+  "homepage": "https://github.com/FireController1847/pandora-radio-desktop#readme",
+  "devDependencies": {
+    "electron": "^1.8.3",
+    "electron-builder": "^20.4.1",
+    "electron-reload": "^1.2.2"
+  },
+  "build": {
+    "appId": "com.electron.vfd.pandoraradio",
+    "win": {
+      "target": "msi",
+      "icon": "src/assets/icons/pandora.ico"
+    }
+  }
+}
